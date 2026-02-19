@@ -1,0 +1,29 @@
+/* Css will go here */
+.cards {
+  display: grid;
+  grid-template-columns: 6fr 6fr 6fr;
+  gap: 20px;
+  padding: 20px;
+}
+
+.card {
+  background-color: aliceblue;
+  margin: 5px;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow:
+    0 4px 8px rgba(0, 0, 0, 0.1),
+    0 6px 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.card img {
+  /* Essential image styles */
+  width: 160px; /* Image takes the full width of the card container */
+  height: 160px; /* Example fixed height for uniform cards */
+  object-fit: cover; /* Crops the image to cover the area while maintaining aspect ratio */
+
+  /* Optional: Round the top corners of the image to match the card */
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+}
