@@ -7,14 +7,24 @@
 }
 
 .card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   background-color: aliceblue;
   margin: 5px;
   padding: 10px;
   border-radius: 10px;
+  border :4px solid #9657A8;
+  border-radius: 22px;
   box-shadow:
     0 4px 8px rgba(0, 0, 0, 0.1),
     0 6px 20px rgba(0, 0, 0, 0.1);
   text-align: center;
+}
+
+.card p {
+  flex-grow: 1;
+  margin: 8px 0;
 }
 
 .card img {
@@ -24,11 +34,25 @@
   object-fit: cover; /* Crops the image to cover the area while maintaining aspect ratio */
 
   /* Optional: Round the top corners of the image to match the card */
-  border-top-left-radius: 16px;
-  border-top-right-radius: 16px;
+  border-radius: 26px;
+  align-self: center;
+}
+
+.cart-panel button.close-btn {
+  margin-top: auto;
+}
+
+button{
+  background: #9657A8;
+  color: white;
+  border: none;
+  border-radius: 14px;
+    padding: 4px 8px;
 }
 
 .cart-panel {
+  display: flex;
+  flex-direction: column;
   position: fixed;
   top: 0;
   right: -350px;
@@ -36,6 +60,7 @@
   height: 100%;
   background: #fff;
   box-shadow: -2px 0 8px rgba(0,0,0,0.2);
+  border :4px solid #9657A8;
   z-index: 100;
   transition: right 0.3s ease;
   padding: 20px;
@@ -56,14 +81,35 @@
   z-index: 99;
 }
 
+.cartItem {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 12px;
+}
+
+.cart-item .removeAll {
+  margin-left: auto;
+}
+
 .Header{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 0 20px;
+  margin: 10px 20px;
   position: sticky;
   top: 0;
   background: #fff;
+  border :4px solid #9657A8;
+  border-radius: 32px;
   z-index: 10;
-  padding: 10px 0;
+  padding: 0px 30px;
+}
+
+.FullPage{
+  background-color: #69A857;
+}
+
+body {
+  background-color: #69A857;
 }

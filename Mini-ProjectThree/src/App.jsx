@@ -17,7 +17,7 @@ function App() {
      setCurCart(prev => prev.filter(a => a !== ID));
      }
      //May implement remove 1
-
+     // GetCartItems is a vauge implementation of https://stackoverflow.com/questions/76088436/find-the-number-of-occurrences-in-an-array-using-reduce-in-javascript
     function getCartItems() {
     return curCart.reduce((acc, id) => {
       acc[id] = (acc[id] || 0) + 1;
@@ -25,31 +25,48 @@ function App() {
     }, {});
   }
 
+  function removeOneFromCart(ID){
+    setCurCart(prev => {
+    const index = prev.indexOf(ID);
+    return prev.filter((_, i) => i !== index);
+    });
+  }
+
   // Consts/ vars go here
   return (
-    <div>
+    <div className = "FullPage">
 
       {cartOpen && (
     <div className="cart-overlay" onClick={() => setCartOpen(false)} />)}
       <div className={`cart-panel ${cartOpen ? 'open' : ''}`}>
         <h2>Your Cart ({CartCounter})</h2>
-        <button onClick={() => setCartOpen(false)}>
-          X Close
-          </button>
+
         <hr />
 
         {CartCounter === 0 ? (
           <p>Your cart is empty.</p>
         ) : (
           Object.entries(getCartItems()).map(([id, count]) => (
-            <div key={id} >
+            <div key={id} className ='cartItem' >
               <strong>{id}</strong> x{count}
-              <button onClick={() => removeAllFromCart(id)}>
-                Remove
+
+              <button onClick={() => addToCart(id)}>
+                +1
+              </button>
+              
+              <button onClick={() => removeOneFromCart(id)}>
+                -1
+              </button>
+
+              <button className="removeAll" onClick={() => removeAllFromCart(id)}>
+              Remove All
               </button>
             </div>
           ))
         )}
+                <button onClick={() => setCartOpen(false)}>
+          X Close
+          </button>
       </div>
       <div className="Header">
         <h1>
@@ -60,9 +77,6 @@ function App() {
         </button>
       </div>
       <div>
-        <h3>
-          Available Items
-        </h3>
           <GenerateCards addToCart={addToCart}/>          
       </div>
     </div>
