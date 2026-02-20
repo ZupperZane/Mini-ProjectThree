@@ -51,16 +51,13 @@ function App() {
           ))
         )}
       </div>
-      <div className ="NavBar">
-        PlaceHolder
-        <button onClick={() => setCartOpen(true)}>
-          Display Cart: {CartCounter}
-        </button>
-      </div>
-      <div>
+      <div className="Header">
         <h1>
           Grocery Store Shopper
         </h1>
+        <button onClick={() => setCartOpen(true)}>
+          Display Cart: {CartCounter}
+        </button>
       </div>
       <div>
         <h3>
