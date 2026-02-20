@@ -1,17 +1,17 @@
 import { useState } from 'react'
 import './App.css'
-import { GenerateCards } from './Cards.jsx'
+import { GenerateCards,getTotal } from './Cards.jsx'
 
 function App() {
   // Cart Variables
     const [curCart, setCurCart] = useState([]);
   const [cartOpen, setCartOpen] = useState(false);
   let CartCounter = curCart.length;
-
   //Cart Functions 
   function addToCart(ID){
      setCurCart(prev => [...prev, ID]);
      }
+
 
  function removeAllFromCart(ID){
      setCurCart(prev => prev.filter(a => a !== ID));
@@ -44,7 +44,7 @@ function App() {
         <hr />
 
         {CartCounter === 0 ? (
-          <p>Your cart is empty.</p>
+          <p>Your List is empty.</p>
         ) : (
           Object.entries(getCartItems()).map(([id, count]) => (
             <div key={id} className ='cartItem' >
@@ -64,16 +64,19 @@ function App() {
             </div>
           ))
         )}
+        <h1>
+          Aprroximate price with tax: {getTotal(curCart)}
+        </h1>
                 <button onClick={() => setCartOpen(false)}>
           X Close
           </button>
       </div>
       <div className="Header">
         <h1>
-          Grocery Store Shopper
+          Grocery List Helper
         </h1>
         <button onClick={() => setCartOpen(true)}>
-          Display Cart: {CartCounter}
+          Display List: {CartCounter}
         </button>
       </div>
       <div>
