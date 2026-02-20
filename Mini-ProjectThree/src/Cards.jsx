@@ -1,7 +1,7 @@
 
 
 const PRODUCTS = [
-    {id: "Pizza", name: "Pepperoni Pizza", price: 8.49, image: "src/assets/PizzaTemp.jpg", desc: "Digorno brand frozen pizza, Pepperoni."},
+    {id: "Pizza", name: "Pepperoni Pizza", price: 8.49, image: "Mini-ProjectThree/src/assets/PizzaTemp.jpg", desc: "Digorno brand frozen pizza, Pepperoni."},
     {id: "Beef", name: "Ground Beef", price: 6.99, image: "src/assets/Beef.jpg", desc: "1-lb Raw Beef ready-to-cook."},
     {id: "Chicken", name: "Chicken", price: 4.49, image: "src/assets/Chicken.jpg", desc: "1-lb Raw Chicken ready-to-cook."},
     {id: "Grapes", name: "Grapes", price: 3.29, image: "src/assets/Grapes.jpg", desc: "1-lb Green Cotton Candy Grapes."},
